@@ -10,19 +10,18 @@ This repository is maintained to:
 - Demonstrate consistent coding practice in Python
 
 ## Repository Structure
-LeetCode-Solutions/
-│
-├── arrays/
-├── strings/
-├── linked_list/
-├── stack_queue/
-├── trees/
-├── graphs/
-├── dynamic_programming/
-├── greedy/
-├── backtracking/
-│
-└── README.md
+
+- `arrays/` – Array-based problems
+- `strings/` – String manipulation problems
+- `linked_list/` – Linked list implementations
+- `stack_queue/` – Stack and queue related problems
+- `trees/` – Binary trees, BSTs, and traversals
+- `graphs/` – Graph traversal and algorithms
+- `dynamic_programming/` – DP problems
+- `greedy/` – Greedy algorithms
+- `backtracking/` – Recursive and backtracking problems
+- `README.md` – Project documentation
+
 Problems are organized by topic. Each file is named using the LeetCode problem number and title.
 Example: `0217_contains_duplicate.py`
 
@@ -37,17 +36,17 @@ Each solution includes:
 ## Tech Stack
 - Language: Python 3.x
 
-  ## Progress
-- Total Problems Solved: XX
+## Progress
+- Total Problems Solved: 40
 - Easy: 35
 - Medium: 04
 - Hard: 01
 
 ## Author
-Maintained by Aarav Gupta  
+Maintained by **Aarav Gupta**  
 BTech CSE AI
 USICT, GGSIPU
-Leetcode Profile link: https://leetcode.com/u/unknown-entity226/
+Leetcode Profile link: [https://leetcode.com/u/unknown-entity226/](https://leetcode.com/u/unknown-entity226/)
 
 
 
