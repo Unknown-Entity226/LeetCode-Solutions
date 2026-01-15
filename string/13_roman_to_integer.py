@@ -2,6 +2,9 @@
 Given a Roman numeral string s, convert it into its corresponding integer value.
 Roman numerals are composed of the symbols:
 I, V, X, L, C, D, M, representing values from 1 to 1000.
+
+Other Topics covered : Maths, Hashmap
+
 Approach (Reverse Traversal):
 ->Use a dictionary to map Roman symbols to their integer values.
 ->Reverse the string to process it from right to left.
