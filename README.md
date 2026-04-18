@@ -37,9 +37,9 @@ Each solution includes:
 - Language: Python 3.x
 
 ## Progress
-- Total Problems Solved: 77
-- Easy: 55
-- Medium: 21
+- Total Problems Solved: 83
+- Easy: 60
+- Medium: 22
 - Hard: 01
 
 ## Author
