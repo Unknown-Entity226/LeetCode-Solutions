@@ -1,57 +1,50 @@
 """
 Problem Description:
-A shop offers the following discount:
+A shop offers a promotion:
+- For every two candies purchased, one additional candy can be taken for free.
+- The free candy must have a cost less than or equal to the cheaper
+  of the two purchased candies.
 
-For every two candies bought,
-you may take a third candy for free provided:
-
-    free_candy_cost <= min(bought_candy_1, bought_candy_2)
-
-Return the minimum amount of money needed to buy all candies.
+Return the minimum cost required to obtain all candies.
 
 Approach:
-- To maximize the discount, we want the most expensive candies
-  to be paid for and every third candy to be as expensive as possible.
-- Sort the array in descending order.
-- Process candies in groups of three:
-    - Pay for the first two candies.
-    - Get the third candy for free.
-- Add the costs of the first two candies from each group.
-
-Example:
-cost = [6,5,4,3,2,1]
-
-Sorted descending:
-[6,5,4,3,2,1]
-
-Groups:
-(6,5,4) -> pay 6+5, get 4 free
-(3,2,1) -> pay 3+2, get 1 free
-
-Total = 16
+- Sort the candies by cost.
+- Start from the most expensive candies.
+- For every group of three candies:
+    - Pay for the two most expensive.
+    - Take the third most expensive for free.
+- Accumulate the cost of only the candies that must be paid for.
 
 Time Complexity:
 O(n log n)
+- Due to sorting.
 
 Space Complexity:
 O(1)
+- Ignoring the space used by the sorting algorithm.
 """
-
 class Solution(object):
-
     def minimumCost(self, cost):
         """
         :type cost: List[int]
         :rtype: int
         """
+        size = len(cost)
+        cost.sort()
 
-        cost.sort(reverse=True)
-
+        i = size - 1
+        j = size - 2
         total = 0
 
-        for i in range(len(cost)):
+        while i >= 0 and j >= 0:
+            total += cost[i] + cost[j]
+            i -= 3
+            j -= 3
 
-            if i % 3 != 2:
-                total += cost[i]
+        if i >= 0:
+            total += cost[i]
+
+        if j >= 0:
+            total += cost[j]
 
         return total
