@@ -28,7 +28,7 @@ O(n)
 
 Space Complexity:
 O(n)
-- Ignoring the output array.
+- For output array.
 """
 
 class Solution(object):
