@@ -15,18 +15,6 @@ Observation:
 
   the rightmost set bit (1-bit) of n is removed.
 
-Example:
-
-    n = 12
-
-    1100
-    1011
-    ----
-    1000
-
-One set bit is removed.
-
-Therefore:
 - Repeatedly remove the rightmost set bit.
 - Count how many times this operation can be performed
   before n becomes 0.
