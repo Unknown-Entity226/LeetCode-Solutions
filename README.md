@@ -37,10 +37,10 @@ Each solution includes:
 - Language: Python 3.x
 
 ## Progress
-- Total Problems Solved: 294
-- Easy: 172
-- Medium: 113
-- Hard: 09
+- Total Problems Solved: 318
+- Easy: 181
+- Medium: 126
+- Hard: 11
 
 ## Author
 Maintained by **Aarav Gupta**  
