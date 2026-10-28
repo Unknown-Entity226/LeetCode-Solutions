@@ -6,31 +6,31 @@ at most once, and duplicate combinations are not allowed.
 
 Approach:
 - Sort candidates to group duplicate values together.
-- Use backtracking to explore including or excluding each candidate.
-- When including a candidate, move to the next index so that each
-  element is used at most once.
-- Backtrack by removing the last added element after each recursive call.
-- When excluding a candidate, skip its adjacent duplicates to avoid
+- Use backtracking with include and exclude decisions for each candidate.
+- Include the current candidate and recurse from the next index.
+- Backtrack using pop() after exploring the include branch.
+- Skip adjacent duplicate values in the exclude branch to avoid
   generating duplicate combinations.
-- When target becomes zero, append a copy of the current combination.
+- Stop exploring when the index reaches the end or the current
+  candidate exceeds the remaining target.
+- Store a copy of the combination whenever the target becomes zero.
 
 Time Complexity:
-O(2^n * n)
+O(n * 2^n)
 
 Reason:
-- Each candidate has an include or exclude decision, producing up to
-  O(2^n) subsets.
-- Copying a valid combination can take up to O(n) time.
-- Therefore, the worst-case time complexity is O(2^n * n), excluding
-  the initial sorting cost of O(n log n).
+- Each candidate can be included or excluded, producing up to O(2^n)
+  recursive possibilities.
+- Copying a valid combination can take O(n) time.
+- Sorting takes O(n log n), which is dominated by O(n * 2^n).
 
 Space Complexity:
-O(n)
+O(n) auxiliary space, excluding the output.
 
 Reason:
 - The recursion depth can reach O(n).
-- The current combination stores at most n elements.
-- Excluding the output list, auxiliary space is O(n).
+- The current combination can contain up to n elements.
+- The output list may require exponential space in the worst case.
 """
 class Solution:
     def combinationSum2(self, candidates: list[int], target: int) -> list[list[int]]:
@@ -42,10 +42,10 @@ class Solution:
                 output.append(ans[:])
                 return 
 
-            if index>=len(candidates):
+            if index>=len(candidates) or candidates[index]>target:
                 return
 
-            # include
+                # include
 
             if candidates[index]<=target:
                 ans.append(candidates[index])
